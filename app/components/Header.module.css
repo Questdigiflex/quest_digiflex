@@ -1,6 +1,6 @@
 .navWrapper {
     width: 100%;
-    font-family: 'Manrope', sans-serif; 
+    font-family: 'Manrope', sans-serif;
     position: relative;
 }
 
@@ -12,12 +12,7 @@
     padding: 8px 150px;
 }
 
-.logo a {
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: #0b1c3f;
-}
+
 
 .leftside {
     display: flex;
@@ -48,18 +43,18 @@
 
 
 .contactBtn {
-  background-color: #0A1F44;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
+    background-color: #0A1F44;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
 
-  display: flex;              /* Enables flexbox */
-  align-items: center;        /* Vertical center */
-  justify-content: center;    /* Horizontal center */
-  /* height: 40px;               Optional: ensures perfect vertical center */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 40px;       */
 }
 
 
@@ -76,20 +71,62 @@
     padding: 20px 200px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
     box-shadow: 0 4px 4px -2px rgba(10, 31, 68, 0.3);
 
 }
 
 
-
 .menuItem {
-    font-size: 14px;
-    cursor: pointer;
-    color: #0b1c3f;
     position: relative;
+
+    color: #0A1F44;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+
 .caret {
-    margin-left: 4px;
-    font-size: 10px;
+    transition: transform 0.3s ease;
+    margin-left: 2px;
+}
+
+.caretIsOpen {
+    transform: rotate(180deg);
+}
+
+/* Dropdown container */
+.dropdown {
+  position: absolute;
+  top: 37px;
+  left: 0;
+  min-width: 180px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(141, 97, 97, 0.1);
+  padding: 8px 0;
+  flex-direction: column;
+  z-index: 1000;
+  display: flex;
+}
+
+/* Dropdown link styles */
+.dropdown a {
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #0A1F44;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown a:hover {
+    background-color: #f2f2f2;
 }

@@ -1,0 +1,95 @@
+.navWrapper {
+    width: 100%;
+    font-family: 'Manrope', sans-serif; 
+    position: relative;
+}
+
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 8px 150px;
+}
+
+.logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #0b1c3f;
+}
+
+.leftside {
+    display: flex;
+    gap: 5px;
+}
+
+.searchContainer {
+    max-width: 400px;
+    position: relative;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    font-size: 14px;
+}
+
+.searchIcon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+    cursor: pointer;
+}
+
+
+.contactBtn {
+  background-color: #0A1F44;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+
+  display: flex;              /* Enables flexbox */
+  align-items: center;        /* Vertical center */
+  justify-content: center;    /* Horizontal center */
+  /* height: 40px;               Optional: ensures perfect vertical center */
+}
+
+
+
+.line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #DCDCDC;
+}
+
+
+.menuBar {
+    padding: 20px 200px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 4px -2px rgba(10, 31, 68, 0.3);
+
+}
+
+
+
+.menuItem {
+    font-size: 14px;
+    cursor: pointer;
+    color: #0b1c3f;
+    position: relative;
+}
+
+.caret {
+    margin-left: 4px;
+    font-size: 10px;
+}

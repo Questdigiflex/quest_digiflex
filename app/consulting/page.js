@@ -1,1 +1,5 @@
-export default function Page() { return <h1>consulting Page</h1>; }
+import Consulting from "./consulting";
+
+export default function Page() { 
+    return <Consulting/> 
+}

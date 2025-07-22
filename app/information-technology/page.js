@@ -1,1 +1,5 @@
-export default function Page() { return <h1>information-technology Page</h1>; }
+import InformationTechnology from "./informationTechnology";
+
+export default function Page() { 
+    return <InformationTechnology/> 
+}

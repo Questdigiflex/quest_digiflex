@@ -1,1 +1,5 @@
-export default function Page() { return <h1>financial Page</h1>; }
+import Financial from "./financial";
+
+export default function Page() { 
+    return <Financial/> 
+}

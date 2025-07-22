@@ -1,1 +1,5 @@
-export default function Page() { return <h1>travel Page</h1>; }
+import Travel from "./travel";
+
+export default function Page() { 
+    return <Travel/> 
+}

@@ -1,1 +1,5 @@
-export default function Page() { return <h1>manufacturing Page</h1>; }
+import Manufacturing from "./manufacturing";
+
+export default function Page() { 
+    return <Manufacturing/>
+}

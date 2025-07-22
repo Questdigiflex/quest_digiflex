@@ -1,1 +1,5 @@
-export default function Page() { return <h1>shopify Page</h1>; }
+import Shopify from "./shopify";
+
+export default function Page() { 
+    return <Shopify/> 
+}

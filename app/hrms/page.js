@@ -1,1 +1,5 @@
-export default function Page() { return <h1>hrms Page</h1>; }
+import HRMS from "./hrms";
+
+export default function Page() { 
+    return <HRMS/> 
+}

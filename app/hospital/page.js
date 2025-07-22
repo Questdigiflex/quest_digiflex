@@ -1,1 +1,5 @@
-export default function Page() { return <h1>hospital Page</h1>; }
+import Hospital from "./hospital";
+
+export default function Page() { 
+    return <Hospital/>
+}

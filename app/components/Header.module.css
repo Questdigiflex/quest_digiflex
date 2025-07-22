@@ -9,7 +9,7 @@
     justify-content: space-between;
     align-items: center;
     background: white;
-    padding: 8px 150px;
+    padding: 8px 100px;
 }
 
 
@@ -68,11 +68,10 @@
 
 
 .menuBar {
-    padding: 20px 200px;
+    padding: 20px 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     box-shadow: 0 4px 4px -2px rgba(10, 31, 68, 0.3);
 
 }
@@ -82,7 +81,6 @@
     position: relative;
     font-weight: 400;
     font-style: normal;
-    font-size: 16px;
     line-height: 100%;
     letter-spacing: 0;
     cursor: pointer;
@@ -92,9 +90,10 @@
     align-items: center;
 }
 
-.menuLink {
+.menuLink, .menuIcon {
     text-decoration: none;
     color: #0A1F44;
+    font-size: 16px;
 }
 
 .caret {
@@ -110,20 +109,22 @@
     position: absolute;
     top: 37px;
     left: 50%;
+    z-index: 1000;
     transform: translateX(-50%);
     width: 200px;
     min-width: 180px;
     background-color: #fff;
     box-shadow: 0 4px 12px rgba(141, 97, 97, 0.1);
+
     padding: 8px 0;
-    flex-direction: column;
-    z-index: 1000;
+
     display: flex;
+    flex-direction: column;
 }
 
 /* Dropdown link styles */
 .dropdown a {
-    padding: 10px 16px;
+    padding: 10px 12px;
     text-decoration: none;
     color: #0A1F44;
     font-size: 14px;
@@ -134,12 +135,62 @@
     background-color: #f2f2f2;
 }
 
-/* @media (max-width: 1024px) {    
-    .topBar {
-        padding: 8px 10px ;
-    }
-    .menuBar {
-        padding: 20px 12px;
-    }
+
+
+
+
+/* @media (min-width: 1276px) {
+
 } */
- 
+
+
+@media (min-width: 769px) and (max-width: 1275px) {
+    .topBar {
+        padding: 12px 20px;
+    }
+
+    .menuBar {
+        padding: 12px 20px;
+    }
+    
+    .menuLink {
+        font-size: 10px;
+    }
+
+    .dropdown {
+        top: 29px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* First menu item - left aligned */
+    .menuItem:first-child .dropdown {
+        left: 0;
+        right: auto;
+        transform: none;
+    }
+
+    /* Last menu item - right aligned */
+    .menuItem:last-child .dropdown {
+        right: 0;
+        left: auto;
+        transform: none;
+    }
+
+    .dropdown a {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .topBar {
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .topBar {
+        padding: 12px 20px;
+    }
+
+}

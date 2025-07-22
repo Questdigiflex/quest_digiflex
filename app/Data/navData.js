@@ -3,89 +3,96 @@ export const menuItems = [
         label: 'Travel',
         href: '/travel',
         dropdown: [
-            { label: 'Flights', href: '/travel/flights' },
-            { label: 'Hotels', href: '/travel/hotels' },
-            { label: 'Packages', href: '/travel/packages' }
-        ]
+            { label: 'Air Industry', href: '/travel/air' },
+            { label: 'Hospitality Industry', href: '/travel/hospitality' },
+            { label: 'Cruise Industry', href: '/travel/cruise' },
+        ],
     },
     {
         label: 'Hospital',
         href: '/hospital',
         dropdown: [
-            { label: 'Appointments', href: '/hospital/appointments' },
-            { label: 'Departments', href: '/hospital/departments' },
-            { label: 'Doctors', href: '/hospital/doctors' }
-        ]
+            { label: 'General Hospitals', href: '/hospital/general-hospitals' },
+            { label: 'Specialty Hospitals', href: '/hospital/specialty-hospitals' },
+            { label: 'Surgical Hospitals & Centers', href: '/hospital/surgical-centers' },
+            { label: 'Teaching & Research Hospitals', href: '/hospital/teaching-research' },
+            { label: 'Diagnostic & Pathology Centers', href: '/hospital/diagnostic-pathology' },
+        ],
     },
     {
         label: 'Financial',
         href: '/financial',
         dropdown: [
-            { label: 'Investments', href: '/financial/investments' },
-            { label: 'Insurance', href: '/financial/insurance' },
-            { label: 'Tax Planning', href: '/financial/tax' }
-        ]
+            { label: 'Retail Banking', href: '/financial/retail-banking' },
+            { label: 'Corporate Banking', href: '/financial/corporate-banking' },
+            { label: 'Insurance Services', href: '/financial/insurance' },
+        ],
     },
     {
-        label: 'Education',
-        href: '/education',
+        label: 'HRMS',
+        href: '/hrms',
         dropdown: [
-            { label: 'Online Courses', href: '/education/online-courses' },
-            { label: 'Certifications', href: '/education/certifications' },
-            { label: 'Tutorials', href: '/education/tutorials' }
-        ]
+            { label: 'Payroll Management', href: '/hrms/payroll' },
+            { label: 'Attendance & Leave Management', href: '/hrms/attendance-leave' },
+            { label: 'Learning & Development', href: '/hrms/learning-development' },
+            { label: 'Workforce Planning & Analytics', href: '/hrms/workforce-planning' },
+            { label: 'Employee Self-Service (ESS)', href: '/hrms/ess' },
+        ],
     },
     {
         label: 'Consulting',
         href: '/consulting',
         dropdown: [
-            { label: 'Business Strategy', href: '/consulting/strategy' },
+            { label: 'Management Consulting', href: '/consulting/management' },
             { label: 'IT Consulting', href: '/consulting/it' },
-            { label: 'HR Consulting', href: '/consulting/hr' }
-        ]
-    },
-    {
-        label: 'Real Estate',
-        href: '/real-estate',
-        dropdown: [
-            { label: 'Buy', href: '/real-estate/buy' },
-            { label: 'Rent', href: '/real-estate/rent' },
-            { label: 'Sell', href: '/real-estate/sell' }
-        ]
-    },
-    {
-        label: 'Manufacturing',
-        href: '/manufacturing',
-        dropdown: [
-            { label: 'Machinery', href: '/manufacturing/machinery' },
-            { label: 'Automation', href: '/manufacturing/automation' },
-            { label: 'Suppliers', href: '/manufacturing/suppliers' }
-        ]
+            { label: 'Financial Consulting', href: '/consulting/financial' },
+        ],
     },
     {
         label: 'Information Technology',
         href: '/information-technology',
         dropdown: [
-            { label: 'Software Development', href: '/information-technology/software-development' },
-            { label: 'IT Support', href: '/information-technology/support' },
-            { label: 'Cloud Services', href: '/information-technology/cloud' }
-        ]
+            {
+                label: 'Enterprise Software Providers (ERP, CRM, SCM)',
+                href: '/information-technology/enterprise-software',
+            },
+            { label: 'Web & Mobile App Development', href: '/information-technology/web-mobile' },
+        ],
     },
     {
-        label: 'Logistics',
-        href: '/logistics',
+        label: 'Real Estate',
+        href: '/real-estate',
         dropdown: [
-            { label: 'Freight', href: '/logistics/freight' },
-            { label: 'Warehousing', href: '/logistics/warehousing' },
-            { label: 'Tracking', href: '/logistics/tracking' }
-        ]
+            { label: 'Commercial Real Estate', href: '/real-estate/commercial' },
+            { label: 'Real Estate Brokerage / Agent Services', href: '/real-estate/brokerage' },
+            { label: 'Real Estate Technology', href: '/real-estate/technology' },
+        ],
+    },
+    {
+        label: 'Manufacturing',
+        href: '/manufacturing',
+        dropdown: [
+            { label: 'Automotive Manufacturing', href: '/manufacturing/automotive' },
+            { label: 'Food & Beverage Manufacturing', href: '/manufacturing/food-beverage' },
+        ],
     },
     {
         label: 'Shopify',
         href: '/shopify',
         dropdown: [
-            { label: 'Theme Development', href: '/shopify/theme-development' },
-            { label: 'App Integration', href: '/shopify/app-integration' }
-        ]
-    }
+            { label: 'Fashion & Apparel Stores', href: '/shopify/fashion' },
+            { label: 'Health & Beauty Stores', href: '/shopify/health-beauty' },
+            { label: 'Electronics & Gadgets', href: '/shopify/electronics' },
+            { label: 'Fitness & Wellness Products', href: '/shopify/fitness' },
+        ],
+    },
+    {
+        label: 'Logistics',
+        href: '/logistics',
+        dropdown: [
+            { label: 'Third-Party Logistics', href: '/logistics/3pl' },
+            { label: 'Warehousing & Storage', href: '/logistics/warehousing' },
+            { label: 'E-commerce Fulfillment', href: '/logistics/ecommerce-fulfillment' },
+        ],
+    },
 ];

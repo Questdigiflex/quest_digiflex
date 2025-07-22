@@ -80,8 +80,6 @@
 
 .menuItem {
     position: relative;
-
-    color: #0A1F44;
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
@@ -94,6 +92,10 @@
     align-items: center;
 }
 
+.menuLink {
+    text-decoration: none;
+    color: #0A1F44;
+}
 
 .caret {
     transition: transform 0.3s ease;
@@ -104,18 +106,19 @@
     transform: rotate(180deg);
 }
 
-/* Dropdown container */
 .dropdown {
-  position: absolute;
-  top: 37px;
-  left: 0;
-  min-width: 180px;
-  background-color: #fff;
-  box-shadow: 0 4px 12px rgba(141, 97, 97, 0.1);
-  padding: 8px 0;
-  flex-direction: column;
-  z-index: 1000;
-  display: flex;
+    position: absolute;
+    top: 37px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    min-width: 180px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(141, 97, 97, 0.1);
+    padding: 8px 0;
+    flex-direction: column;
+    z-index: 1000;
+    display: flex;
 }
 
 /* Dropdown link styles */
@@ -130,3 +133,13 @@
 .dropdown a:hover {
     background-color: #f2f2f2;
 }
+
+/* @media (max-width: 1024px) {    
+    .topBar {
+        padding: 8px 10px ;
+    }
+    .menuBar {
+        padding: 20px 12px;
+    }
+} */
+ 

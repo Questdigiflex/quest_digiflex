@@ -1,5 +1,5 @@
 import styles from './Header.module.css';
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { menuItems } from '../Data/navData';
@@ -9,6 +9,14 @@ export default function Navbar() {
 
     const [menuOpen, setMenuOpen] = useState(null);
     const timeoutRef = useRef(null);
+
+    useEffect(() => {
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
+    }, []);
 
     const handleMouseEnter = (idx) => {
         if (timeoutRef.current) {
@@ -65,10 +73,12 @@ export default function Navbar() {
                         <div
                             key={idx}
                             className={styles.menuItem}
-                            onMouseEnter={() => handleMouseEnter(idx)}  // 🟢 Keeps open if hovered on dropdown
+                            onMouseEnter={() => handleMouseEnter(idx)} 
                             onMouseLeave={handleMouseLeave}
                         >
-                            {item.label}
+                            <Link href={item.href} className={styles.menuLink}>
+                                {item.label}
+                            </Link>
 
                             {
                                 item.dropdown && item.dropdown.length > 0 && (

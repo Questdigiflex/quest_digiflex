@@ -70,6 +70,7 @@
 
 .menuBar {
     padding: 20px 120px;
+    background: var(--background);
     display: flex;
     justify-content: space-between;
     align-items: center;

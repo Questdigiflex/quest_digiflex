@@ -8,6 +8,7 @@ import { menuItems } from '../Data/navData';
 import { Search, ChevronDown } from 'lucide-react';
 import digiflexLogo from "../assets/digiflexLogo.png"
 import useBreakpoint from '../hooks/useBreakPoints';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
@@ -17,6 +18,8 @@ export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(null);
     const [openIndex, setOpenIndex] = useState(null);
     const timeoutRef = useRef(null);
+    const pathname = usePathname();
+
 
     useEffect(() => {
         return () => {
@@ -38,6 +41,13 @@ export default function Navbar() {
             setMenuOpen(null);
         }, 200); // Delay of 200ms
     };
+
+    
+    useEffect(() => {
+        setOpen(false);
+        setMenuOpen(null);
+        setOpenIndex(null);
+    }, [pathname]);
 
     return (
         <div className={styles.navWrapper}>

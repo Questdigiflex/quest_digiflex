@@ -135,15 +135,6 @@
     background-color: #f2f2f2;
 }
 
-
-
-
-
-/* @media (min-width: 1276px) {
-
-} */
-
-
 @media (min-width: 769px) and (max-width: 1275px) {
     .topBar {
         padding: 12px 20px;
@@ -163,14 +154,14 @@
         transform: translateX(-50%);
     }
 
-    /* First menu item - left aligned */
+    /* First menu item */
     .menuItem:first-child .dropdown {
         left: 0;
         right: auto;
         transform: none;
     }
 
-    /* Last menu item - right aligned */
+    /* Last menu item */
     .menuItem:last-child .dropdown {
         right: 0;
         left: auto;
@@ -193,4 +184,104 @@
         padding: 12px 20px;
     }
 
+}
+
+.mobileMenu {
+    background: white;
+    min-height:  calc(100dvh - 56px);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mobileSearchContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 500px;
+}
+
+.mobileSearchInput {
+    width: 100%;
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.mobileSearchIcon {
+    position: absolute;
+    right: 0.75rem;
+    color: #999;
+}
+
+.mobileMenuItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.menuRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.mobileMenuLink {
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.icon {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.chevronBtn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+  color: #555;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+.mobileDropdown {
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mobileSubLink {
+    font-size: 0.9rem;
+    color: #666;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mobileContactBtn {
+    margin-top: auto;
+    background-color: #000;
+    color: #fff;
+    padding: 0.75rem;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
 }

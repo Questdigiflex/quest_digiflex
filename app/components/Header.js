@@ -13,8 +13,9 @@ export default function Navbar() {
     const { isMobile, isTablet, isLaptop, isDesktop } = useBreakpoint();
     const [open, setOpen] = useState(false);
     const [menuOpen, setMenuOpen] = useState(null);
+    const [openIndex, setOpenIndex] = useState(null);
     const timeoutRef = useRef(null);
-    
+
     useEffect(() => {
         return () => {
             if (timeoutRef.current) {
@@ -43,9 +44,9 @@ export default function Navbar() {
 
                 <div className={styles.logo}>
                     <Link href="/">
-                        <Image src={digiflexLogo} 
-                        height={isMobile ?  24 : 28}
-                        priority alt='Digiflex Logo' />
+                        <Image src={digiflexLogo}
+                            height={isMobile ? 24 : 28}
+                            priority alt='Digiflex Logo' />
 
                     </Link>
                 </div>
@@ -78,9 +79,9 @@ export default function Navbar() {
                         <div className={styles.menuIcon} onClick={() => setOpen(!open)}>
                             {
                                 open ? (
-                                    <X  size={isMobile ?  28 : 32} />
+                                    <X size={isMobile ? 28 : 32} />
                                 ) : (
-                                    <Menu size={isMobile ?  28 : 32} />
+                                    <Menu size={isMobile ? 28 : 32} />
                                 )
                             }
                         </div>
@@ -90,58 +91,127 @@ export default function Navbar() {
             </div>
 
             <div className={styles.line}></div>
+            <>
+                {
+                    (isLaptop || isDesktop) && (
+                        <div className={styles.menuBar}>
 
-            {
-                
-                (isLaptop || isDesktop) && ( 
-                    <div className={styles.menuBar}>
+                            {
 
-                        { 
-                        
-                            menuItems.map((item, idx) => (
-                                <div
-                                    key={idx}
-                                    className={styles.menuItem}
-                                    onMouseEnter={() => handleMouseEnter(idx)} 
-                                    onMouseLeave={handleMouseLeave}
-                                >
-                                    <Link href={item.href} className={styles.menuLink}>
-                                        {item.label}
-                                    </Link>
+                                menuItems.map((item, idx) => (
+                                    <div
+                                        key={idx}
+                                        className={styles.menuItem}
+                                        onMouseEnter={() => handleMouseEnter(idx)}
+                                        onMouseLeave={handleMouseLeave}
+                                    >
+                                        <Link href={item.href} className={styles.menuLink}>
+                                            {item.label}
+                                        </Link>
 
-                                    {
-                                        item.dropdown && item.dropdown.length > 0 && (
-                                            <>
-                                                <span
-                                                    className={`${styles.caret} ${menuOpen === idx ? styles.caretIsOpen : ''}`}
-                                                >
-                                                    <ChevronDown size={12} />
-                                                </span>
+                                        {
+                                            item.dropdown && item.dropdown.length > 0 && (
+                                                <>
+                                                    <span
+                                                        className={`${styles.caret} ${menuOpen === idx ? styles.caretIsOpen : ''}`}
+                                                    >
+                                                        <ChevronDown size={12} />
+                                                    </span>
 
-                                                {
-                                                    menuOpen === idx && (
-                                                        <div className={styles.dropdown}>
-                                                            {
-                                                                item.dropdown.map((sub, i) => (
-                                                                    <Link key={i} href={sub.href}>
-                                                                        {sub.label}
-                                                                    </Link>
-                                                                ))
-                                                            }
-                                                        </div>
-                                                    )
-                                                }
-                                            </>
-                                        )
-                                    }
-                                </div>
-                            ))
-                            
-                        }
+                                                    {
+                                                        menuOpen === idx && (
+                                                            <div className={styles.dropdown}>
+                                                                {
+                                                                    item.dropdown.map((sub, i) => (
+                                                                        <Link key={i} href={sub.href}>
+                                                                            {sub.label}
+                                                                        </Link>
+                                                                    ))
+                                                                }
+                                                            </div>
+                                                        )
+                                                    }
+                                                </>
+                                            )
+                                        }
+                                    </div>
+                                ))
 
-                    </div>
-                )
-            }
+                            }
+
+                        </div>
+                    )
+                }
+                {
+                    (isMobile || isTablet) && open && (
+                        <div className={styles.mobileMenu}>
+
+                            <div className={styles.mobileSearchContainer}>
+                                <input
+                                    type="text"
+                                    placeholder="Search"
+                                    className={styles.mobileSearchInput}
+                                />
+                                <span className={styles.mobileSearchIcon}><Search size={20} /></span>
+                            </div>
+
+                            {
+                                menuItems.map((item, idx) => (
+
+                                    <div key={idx} className={styles.mobileMenuItem}>
+
+                                        <div className={styles.menuRow}>
+
+                                            <Link
+                                                className={styles.mobileMenuLink}
+                                                href={item.href}
+                                            >
+                                                {item.icon && <item.icon size={16} className={styles.icon} />}
+                                                {item.label}
+
+                                            </Link>
+
+                                            {
+                                                item.dropdown && item.dropdown.length > 0 && (
+                                                    <button
+                                                        onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+                                                        className={styles.chevronBtn}
+                                                    >
+                                                        <ChevronDown
+                                                            size={16}
+                                                            className={`${styles.chevron} ${openIndex === idx ? styles.rotate : ''}`}
+                                                        />
+                                                    </button>
+                                                )
+                                            }
+
+                                        </div>
+
+                                        {
+                                            item.dropdown && item.dropdown.length > 0 && openIndex === idx && (
+                                                <div className={styles.mobileDropdown}>
+                                                    {
+                                                        item.dropdown.map((sub, i) => (
+                                                            <Link key={i} href={sub.href} className={styles.mobileSubLink}>
+                                                                {sub.icon && <sub.icon size={16} className={styles.icon} />}
+                                                                {sub.label}
+                                                            </Link>
+                                                        ))
+                                                    }
+                                                </div>
+                                            )
+                                        }
+                                    </div>
+                                ))
+                            }
+
+                            <Link href="/contact" className={styles.mobileContactBtn}>
+                                Contact Us
+                            </Link>
+                        </div>
+                    )
+                }
+            </>
 
         </div>
     );

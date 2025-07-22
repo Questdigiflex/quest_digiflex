@@ -20,8 +20,9 @@
 }
 
 .searchContainer {
-    max-width: 400px;
     position: relative;
+    max-width: 400px;
+
 }
 
 .searchInput {
@@ -135,57 +136,7 @@
     background-color: #f2f2f2;
 }
 
-@media (min-width: 769px) and (max-width: 1275px) {
-    .topBar {
-        padding: 12px 20px;
-    }
-
-    .menuBar {
-        padding: 12px 20px;
-    }
-    
-    .menuLink {
-        font-size: 10px;
-    }
-
-    .dropdown {
-        top: 29px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    /* First menu item */
-    .menuItem:first-child .dropdown {
-        left: 0;
-        right: auto;
-        transform: none;
-    }
-
-    /* Last menu item */
-    .menuItem:last-child .dropdown {
-        right: 0;
-        left: auto;
-        transform: none;
-    }
-
-    .dropdown a {
-        font-size: 10px;
-    }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-    .topBar {
-        padding: 12px 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .topBar {
-        padding: 12px 20px;
-    }
-
-}
-
+/* Mobile */
 .mobileMenu {
     background: white;
     min-height:  calc(100dvh - 56px);
@@ -199,7 +150,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    max-width: 500px;
+    /* max-width: 500px; */
 }
 
 .mobileSearchInput {
@@ -284,4 +235,56 @@
     text-align: center;
     border-radius: 4px;
     text-decoration: none;
+}
+
+
+@media (min-width: 769px) and (max-width: 1275px) {
+    .topBar {
+        padding: 12px 20px;
+    }
+
+    .menuBar {
+        padding: 12px 20px;
+    }
+    
+    .menuLink {
+        font-size: 10px;
+    }
+
+    .dropdown {
+        top: 29px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* First menu item */
+    .menuItem:first-child .dropdown {
+        left: 0;
+        right: auto;
+        transform: none;
+    }
+
+    /* Last menu item */
+    .menuItem:last-child .dropdown {
+        right: 0;
+        left: auto;
+        transform: none;
+    }
+
+    .dropdown a {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .topBar {
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .topBar {
+        padding: 12px 20px;
+    }
+
 }

@@ -1,0 +1,5 @@
+.parentWrapper {
+    margin: 0 auto;
+    background-color: var(--background);
+    width: 100%;
+}

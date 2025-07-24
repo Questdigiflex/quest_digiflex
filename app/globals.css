@@ -1,5 +1,8 @@
 :root {
-	--background: #ffffff;
+	
+     font-family: 'Manrope', sans-serif;
+	--background: #f2f5f8;
+	--whiteColour: #ffffff;
 }
 
 * {

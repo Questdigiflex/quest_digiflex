@@ -13,13 +13,12 @@ import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
 
-    const { isMobile, isTablet, isLaptop, isDesktop } = useBreakpoint();
     const [open, setOpen] = useState(false);
     const [menuOpen, setMenuOpen] = useState(null);
     const [openIndex, setOpenIndex] = useState(null);
     const timeoutRef = useRef(null);
     const pathname = usePathname();
-
+    const { isMobile, isTablet, isLaptop, isDesktop } = useBreakpoint();
 
     useEffect(() => {
         return () => {
@@ -28,6 +27,14 @@ export default function Navbar() {
             }
         };
     }, []);
+
+        
+    useEffect(() => {
+        setOpen(false);
+        setMenuOpen(null);
+        setOpenIndex(null);
+    }, [pathname]);
+
 
     const handleMouseEnter = (idx) => {
         if (timeoutRef.current) {
@@ -42,12 +49,6 @@ export default function Navbar() {
         }, 200); // Delay of 200ms
     };
 
-    
-    useEffect(() => {
-        setOpen(false);
-        setMenuOpen(null);
-        setOpenIndex(null);
-    }, [pathname]);
 
     return (
         <div className={styles.navWrapper}>
